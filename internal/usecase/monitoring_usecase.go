@@ -4,8 +4,8 @@ import (
 	"context"
 	"os"
 	"fmt"
-	"github.com/SangBejoo/parking-space-monitor/entity"
-	"github.com/SangBejoo/parking-space-monitor/repository"
+	"github.com/SangBejoo/parking-space-monitor/internal/entity"
+	"github.com/SangBejoo/parking-space-monitor/internal/repository"
 	"github.com/xjem/t38c"
 )
 

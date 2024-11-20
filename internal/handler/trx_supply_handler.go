@@ -3,8 +3,8 @@ package handler
 import (
 	"encoding/json"
 	"net/http"
-	"github.com/SangBejoo/parking-space-monitor/usecase"
-	"github.com/SangBejoo/parking-space-monitor/entity"
+	"github.com/SangBejoo/parking-space-monitor/internal/usecase"
+	"github.com/SangBejoo/parking-space-monitor/internal/entity"
 )
 
 type TrxSupplyHandler struct {

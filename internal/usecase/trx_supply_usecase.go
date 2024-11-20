@@ -1,8 +1,8 @@
 package usecase
 
 import (
-    "github.com/SangBejoo/parking-space-monitor/repository"
-    "github.com/SangBejoo/parking-space-monitor/entity"
+    "github.com/SangBejoo/parking-space-monitor/internal/repository"
+    "github.com/SangBejoo/parking-space-monitor/internal/entity"
 )
 
 type TrxSupplyUsecase interface {

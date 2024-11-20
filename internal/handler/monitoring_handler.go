@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/SangBejoo/parking-space-monitor/usecase"
+	"github.com/SangBejoo/parking-space-monitor/internal/usecase"
 )
 
 type MonitoringHandler struct {

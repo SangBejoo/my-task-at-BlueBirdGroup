@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/SangBejoo/parking-space-monitor/entity"
-	"github.com/SangBejoo/parking-space-monitor/repository"
+	"github.com/SangBejoo/parking-space-monitor/internal/entity"
+	"github.com/SangBejoo/parking-space-monitor/internal/repository"
 )
 
 type MapPlaceUsecase interface {

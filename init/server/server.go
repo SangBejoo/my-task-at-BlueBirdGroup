@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/SangBejoo/parking-space-monitor/handler"
+	"github.com/SangBejoo/parking-space-monitor/internal/handler"
 )
 
 func StartServer(trxHandler *handler.TrxSupplyHandler, mapHandler *handler.MapPlaceHandler, monitoringHandler *handler.MonitoringHandler) {

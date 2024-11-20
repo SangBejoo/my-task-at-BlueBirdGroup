@@ -9,6 +9,7 @@ require (
 )
 
 require (
+	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/mediocregopher/radix/v4 v4.1.1 // indirect
 	github.com/paulmach/go.geojson v1.4.0 // indirect
 	github.com/tidwall/gjson v1.14.3 // indirect

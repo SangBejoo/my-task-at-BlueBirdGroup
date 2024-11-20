@@ -2,7 +2,7 @@ package repository
 
 import (
     "database/sql"
-    "github.com/SangBejoo/parking-space-monitor/entity"
+    "github.com/SangBejoo/parking-space-monitor/internal/entity"
 )
 
 type TrxSupplyRepository interface {
