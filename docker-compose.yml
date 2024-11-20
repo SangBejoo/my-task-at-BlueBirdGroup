@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgis/postgis:13-3.3
+    environment:
+      POSTGRES_USER: ${DB_USER:-root}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
+      POSTGRES_DB: ${DB_NAME:-subagiyaa}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-root} -d ${DB_NAME:-subagiyaa}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  tile38:
+    image: tile38/tile38:latest
+    ports:
+      - "9851:9851"
+
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=root
+      - DB_PASSWORD=secret
+      - DB_NAME=subagiyaa
+      - DB_PORT=5432
+      - TILE38_HOST=tile38
+      - TILE38_PORT=9851
+    depends_on:
+      postgres:
+        condition: service_healthy
+      tile38:
+        condition: service_started
+
+volumes:
+  postgres_data:
