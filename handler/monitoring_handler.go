@@ -16,12 +16,11 @@ func NewMonitoringHandler(u *usecase.MonitoringUsecase) *MonitoringHandler {
 }
 
 func (h *MonitoringHandler) GetMonitoring(w http.ResponseWriter, r *http.Request) {
-	// Handle getMonitoring endpoint
-	// ...existing code...
 	data, err := h.Usecase.GetMonitoringData()
 	if err != nil {
 		http.Error(w, "Unable to get monitoring data", http.StatusInternalServerError)
 		return
 	}
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(data)
 }

@@ -30,7 +30,9 @@ func (h *MapPlaceHandler) CreateMapPlace(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
+	json.NewEncoder(w).Encode(mapPlace)
 }
 
 func (h *MapPlaceHandler) GetAllMapPlace(w http.ResponseWriter, r *http.Request) {
